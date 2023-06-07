@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/filmspersecond/static/css/main.c943bf78.css",
+    "main.js": "/filmspersecond/static/js/main.41a752c3.js",
+    "static/media/placeholderImage.jpg": "/filmspersecond/static/media/placeholderImage.ae223eab0589deda9d58.jpg",
+    "static/media/castPlaceholderImage.jpg": "/filmspersecond/static/media/castPlaceholderImage.62840a0ba78f72c717d8.jpg",
+    "static/media/tmdbLogo.svg": "/filmspersecond/static/media/tmdbLogo.de1a664e8d0777ca4ddb2a5a298bcfb6.svg",
+    "static/media/movieDatabaseAppLogo.svg": "/filmspersecond/static/media/movieDatabaseAppLogo.af7acfb6953476e97a4d05cfca7e5673.svg",
+    "static/media/unfilledHeart.svg": "/filmspersecond/static/media/unfilledHeart.f7c06f661765526d32e9d271d3a692e3.svg",
+    "static/media/filledHeart.svg": "/filmspersecond/static/media/filledHeart.681e4b10286eaa903b3fd3483600cfa8.svg",
+    "index.html": "/filmspersecond/index.html",
+    "main.c943bf78.css.map": "/filmspersecond/static/css/main.c943bf78.css.map",
+    "main.41a752c3.js.map": "/filmspersecond/static/js/main.41a752c3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c943bf78.css",
+    "static/js/main.41a752c3.js"
+  ]
+}

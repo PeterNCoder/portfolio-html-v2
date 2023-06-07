@@ -94,10 +94,15 @@ a {
 
 h1 {
   font-size: 1.75rem;
+  margin-top: 0.1rem;
 }
 
 h2 {
   font-size: 1rem;
+}
+
+p:not(.copyright) {
+  margin: 0;
 }
 
 ul {
@@ -215,20 +220,18 @@ main {
   text-align: center;
 }
 
-#about h1,
+#about h1 {
+  margin-bottom: 0.5rem;
+}
 #about h2 {
   margin: 0.5rem 0;
-}
-
-#about p {
-  margin: 0;
 }
 
 .school {
   font-weight: 600;
 }
 
-.view-skills-btn {
+.cta-btn {
   border: 2px solid #6495ed;
   display: block;
   text-align: center;
@@ -239,6 +242,39 @@ main {
 
 /* --- Works --- */
 
+#works h1,
+#works h2 {
+  text-align: center;
+}
+
+.main-works {
+  padding: 5rem 1.25rem;
+}
+
+.work-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.dev-items {
+  max-width: 28.75rem;
+}
+
+.design-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.design-images {
+  padding: 0.25rem;
+  border: 2px solid #6495ed;
+}
 
 /* --- Skills --- */
 
@@ -248,13 +284,12 @@ main {
   text-align: center;
 }
 
-#skills h1,
-#skills h2 {
-  margin: 0.5rem 0;
+#skills h1 {
+  margin-bottom: 0.5rem;
 }
 
-#skills p:not(.copyright) {
-  margin: 0;
+#skills h2 {
+  margin: 0.5rem 0;
 }
 
 /* --- Contact --- */
@@ -266,7 +301,6 @@ main {
 }
 
 #contact h1 {
-  margin-top: 0.1rem;
   margin-bottom: 0.25rem;
 }
 
