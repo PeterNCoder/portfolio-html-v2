@@ -13,8 +13,8 @@
     -Works
     -Skills
     -Contact
-  -Single Works
 	- Footer
+  - Keyframes
 ---------------------------------------- */
 
 /* ----------
@@ -71,13 +71,34 @@ body {
 
 @font-face {
   font-family: 'Montserrat';
-  font-weight: 500;
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
-  src: url(../fonts/Montserrat-Medium.ttf) format('truetype');
+  src: url(../fonts/Montserrat-Regular.ttf) format('truetype');
 }
 
 /* ---------- Elements ---------- */
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h2,
+h3, 
+a {
+  font-family: 'Neue Black', "Times New Roman", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 1.75rem;
+}
+
+h2 {
+  font-size: 1rem;
+}
 
 ul {
   padding: 0;
@@ -88,16 +109,6 @@ li {
   list-style: none;
 }
 
-body {
-  font-family: 'Montserrat', sans-serif;
-}
-
-h1,
-h2, 
-a {
-  font-family: 'Neue Black', "Times New Roman", sans-serif;
-  text-transform: uppercase;
-}
 
 /* ---------- Links ---------- */
 
@@ -112,6 +123,10 @@ a {
 
 
 /* ---------- Header ---------- */
+
+header {
+  position: absolute;
+}
 
 .logo {
   margin: 0.25rem;
@@ -148,6 +163,45 @@ a {
 
 /* --- Home --- */
 
+.intro-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.intro-h1 {
+  font-size: 0;
+}
+
+.intro-h1 > span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(1rem) translateY(1rem);
+  animation: diagonalAppear 2s;
+  animation-delay: calc(var(--stagger) * 100ms);
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  font-size: 1.75rem;
+}
+
+.intro-line {
+  opacity: 0;
+  border: 1px solid #6495ed;
+  transform: translatex(-5rem);
+  animation: leftrightAppear 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.intro-h2 {
+  opacity: 0;
+  animation: appear 2s;
+  animation-delay: calc(var(--stagger) * 500ms);
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  margin: 0.25rem 0;
+}
 
 /* --- About --- */
 
@@ -161,9 +215,6 @@ a {
 /* --- Contact --- */
 
 
-/* ---------- Single Works ---------- */
-
-
 /* ---------- Footer ---------- */
 
 .copyright {
@@ -171,4 +222,27 @@ a {
   bottom: 3.5rem;
   left: -0.95rem;
   writing-mode: vertical-rl;
+}
+
+/* ---------- Keyframes ---------- */
+
+@keyframes diagonalAppear {
+  to {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes leftrightAppear {
+  to {
+    transform: translatex(0);
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
