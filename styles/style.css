@@ -61,12 +61,50 @@ body {
 
 /* ---------- Typography ---------- */
 
+@font-face {
+  font-family: 'Neue Black';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url(../fonts/TheNeue-Black.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url(../fonts/Montserrat-Medium.ttf) format('truetype');
+}
 
 /* ---------- Elements ---------- */
 
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h2, 
+a {
+  font-family: 'Neue Black', "Times New Roman", sans-serif;
+  text-transform: uppercase;
+}
 
 /* ---------- Links ---------- */
 
+a {
+  text-decoration: none;
+  color: #000;
+}
 
 /* ----------
 # Components
@@ -75,6 +113,36 @@ body {
 
 /* ---------- Header ---------- */
 
+.logo {
+  margin: 0.25rem;
+}
+
+.header-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: #6495ed;
+  width: 100%;
+  text-align: center;
+}
+
+.header-nav ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  place-items: center;
+}
+
+.header-nav a {
+  display: block;
+  padding: 0.25rem 0;
+}
+
+.header-nav li,
+.header-nav svg {
+  display: block;
+  width: 100%;
+}
 
 /* ---------- Main ---------- */
 
