@@ -146,7 +146,6 @@ a {
 
 /* ---------- Main ---------- */
 
-
 /* --- Home --- */
 
 
@@ -166,3 +165,10 @@ a {
 
 
 /* ---------- Footer ---------- */
+
+.copyright {
+  position: fixed;
+  bottom: 3.5rem;
+  left: -0.95rem;
+  writing-mode: vertical-rl;
+}
