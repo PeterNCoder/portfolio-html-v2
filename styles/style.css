@@ -161,14 +161,14 @@ header {
 
 /* ---------- Main ---------- */
 
-/* --- Home --- */
-
-.intro-wrapper {
+.center-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
+
+/* --- Home --- */
 
 .intro-h1 {
   font-size: 0;
@@ -205,6 +205,33 @@ header {
 
 /* --- About --- */
 
+#about .center-container {
+  border: 2px solid #6495ed;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+#about h1,
+#about h2 {
+  margin: 0.5rem 0;
+}
+
+#about p {
+  margin: 0;
+}
+
+.school {
+  font-weight: 600;
+}
+
+.view-skills-btn {
+  border: 2px solid #6495ed;
+  display: block;
+  text-align: center;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  animation: pulse 1s alternate infinite;
+}
 
 /* --- Works --- */
 
@@ -243,6 +270,17 @@ header {
 @keyframes appear {
   to {
     transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.75;
+    color: #6495ed;
+
+  }
+  to {
     opacity: 1;
   }
 }
