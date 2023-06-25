@@ -218,6 +218,10 @@ main {
   height: 100vh;
 }
 
+.center-container {
+    max-width: 40rem;
+}
+
 /* --- Home --- */
 
 .intro-h1 {
