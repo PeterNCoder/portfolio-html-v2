@@ -143,8 +143,10 @@ header {
   left: 0;
   z-index: 1000;
   background-color: #6495ed;
-  width: 100%;
+  border-radius: 2rem;
+  width: calc(100% - 1rem);
   text-align: center;
+  margin: 0.5rem;
 }
 
 .header-nav ul {
@@ -253,15 +255,26 @@ main {
 
 .work-container {
   display: flex;
+  background-color: #6495ed10;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 1rem;
   margin-bottom: 1.5rem;
+  border: 2px #6495ed solid;
+  padding: 1rem;
+  max-width: fit-content;
+  margin: 1rem auto;
 }
 
 .dev-items {
   max-width: 28.75rem;
+}
+
+.dev-items a:first-child, 
+.dev-items p {
+  display: inline-block;
+  margin-bottom: 0.5rem;
 }
 
 .design-container {

@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-weight: 800;
+    padding-top: 1rem;
+}
+
+header {
+    background-color: pink;
+}
+
+header p {
+    display: inline;
+    font-weight: 600;
+}
+
+button {
+    border: solid 2px #aaa;
+    border-radius: 0.25rem;
+    min-width: 8rem;
+    height: 2rem;
+    margin: 0.5rem;
+    font-weight: 600;
+}
+
+#canvas {
+    background-color: black;
+    margin-top: 1rem;
+}
+
+#player-setup {
+    margin-top: 1rem;
+}
+#play-btn {
+    margin: 1rem auto;
+}
+
+#help-btn {
+    margin-left: 18rem;
+    display: inline;
+}
+
+#player-name-display {
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+#difficulty-list {
+    margin-top: 1rem;
+}
+
+#game-screen p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    background-color: #aaa;
+    margin: 0 auto;
+}
+
+#game-screen {
+    position: relative;
+}
+
+#gameover-display {
+    font-size: 3rem;
+    font-weight: 800;
+    color: red;
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    fill: #fff;
+}

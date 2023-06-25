@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only Boot Strap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- -->
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Snakes</title>
+</head>
+
+<body id="body">
+
+        <header>
+
+            <h1>Snakes</h1>
+
+            <p>Highscore: <span id="highscore">0</span></p>
+            <button id="help-btn">Help</button>
+
+        </header>
+
+                    <!-- SETUP INSTRUCTIONS MODAL -->
+                    <div class="modal" id="setup-modal" tabindex="-1" aria-labelledby="setup-modal-label" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="setup-modal-label">Setup Instructions</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Select a difficulty and press play!</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#gameplay-modal">More Info</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Gameplay Instructions Modal -->
+                    <div class="modal" id="gameplay-modal" tabindex="-1" aria-labelledby="gameplay-modal-label" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="gameplay-modal-label">Gameplay Instructions</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Use the arrow keys on your keyboard to move the snake!</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button id="close-modal-btn" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                                        <!-- Gameover Modal -->
+                                        <div class="modal" id="gameover-modal" tabindex="-1" aria-labelledby="gameover-modal-label" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="gameover-modal-label">Game Over</h5>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p>Thank you for playing my game!</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button id="close-modal-btn" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+        <main>
+            <!-- SPLASH -->
+            <div id="splash-screen" class="screen">
+
+                <div id="player-setup">
+                    <input id="player-name-input" placeholder="Enter Name"/>
+                    <button id="player-join-btn">Join</button>
+                </div>
+
+                <div id="player-name-display"></div>
+
+                <div id="joined-setup" hidden>
+
+                <div id="difficulty-list" class="btn-group btn-group-toggle" data-toggle="buttons">
+
+                    <label class="btn btn-secondary">
+                      <input class="input" type="radio" name="options" id="snail" autocomplete="off"> Snail
+                    </label>
+                    <label class="btn btn-secondary">
+                      <input class="input" type="radio" name="options" id="easy" autocomplete="off"> Easy
+                    </label>
+                    <label class="btn btn-secondary">
+                      <input class="input" type="radio" name="options" id="normal" autocomplete="off"> Normal
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input class="input" type="radio" name="options" id="hard" autocomplete="off"> Hard
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input class="input" type="radio" name="options" id="insane" autocomplete="off"> Insane
+                      </label>
+                  </div>
+                  <br>
+                <button type="button" id="play-btn" disabled>Play</button>
+                <button type="button" id="change-name-btn">Change Name</button>
+
+                </div>
+
+            </div>
+            <!-- GAME -->
+            <div id="game-screen" class="screen">
+
+                <canvas id="canvas"></canvas>
+
+                <p class="score-bg">Score: <span id="score">0</span></p>
+                <button type="button" id="reset-btn">Reset</button>
+                <button type="button" id="quit-btn">Quit</button>
+
+
+                <span id="gameover-display" hidden>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24"><path d="M12 3.385c-4.681 0-8.475 3.794-8.475 8.475 0 3.229 1.818 6.019 4.475 7.449v2.582c.672.906 2 1.109 2 1.109v-2h1v1.999h2v-1.999h1v2s1.328-.203 2-1.109v-2.582c2.657-1.431 4.475-4.22 4.475-7.449 0-4.681-3.794-8.475-8.475-8.475zm-4 11.615c-1.381 0-2.5-1.119-2.5-2.5 0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5c0 1.381-1.119 2.5-2.5 2.5zm2 2l2-2.541 2 2.541h-4zm6-2c-1.38 0-2.5-1.119-2.5-2.5 0-1.38 1.12-2.5 2.5-2.5 1.381 0 2.5 1.12 2.5 2.5 0 1.381-1.119 2.5-2.5 2.5zm4.54 2.904l3.46 3.46-2.636 2.636-3.48-3.48c1.035-.705 1.931-1.595 2.656-2.616zm-17.2-11.928l-3.34-3.339 2.636-2.637 3.32 3.32c-1.021.724-1.911 1.621-2.616 2.656zm14.704-2.656l3.32-3.32 2.636 2.637-3.34 3.339c-.705-1.035-1.595-1.932-2.616-2.656zm-11.928 17.2l-3.48 3.48-2.636-2.636 3.46-3.46c.725 1.021 1.621 1.911 2.656 2.616z"/></svg> 
+                    Game Over . . .</span>
+            </div>
+
+        </main>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <!-- -->
+    <!-- JavaScript Bundle with Popper (Bootstrap) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+    <!-- -->
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
