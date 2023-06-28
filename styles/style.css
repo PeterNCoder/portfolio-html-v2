@@ -137,6 +137,14 @@ a {
 
 header {
   position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#current-time {
+  padding: 1rem;
+  font-weight: bold;
 }
 
 .logo {
