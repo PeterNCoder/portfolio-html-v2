@@ -21,6 +21,12 @@
 # Base
 ---------- */
 
+:root {
+  --primary-color: #000;
+  --secondary-color: #fff;
+  --accent-color: #89cff0;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -143,7 +149,7 @@ header {
   left: 0;
   right: 0;
   z-index: 1000;
-  background-color: #89cff0;
+  background-color: var(--accent-color);
   border-radius: 2rem;
   /* width: calc(100% - 1rem); */
   text-align: center;
@@ -241,7 +247,7 @@ main {
 
 .intro-line {
   opacity: 0;
-  border: 1px solid #89cff0;
+  border: 1px solid var(--accent-color);
   transform: translatex(-5rem);
   animation: leftrightAppear 3s;
   animation-iteration-count: 1;
@@ -260,7 +266,7 @@ main {
 /* --- About --- */
 
 #about .center-container {
-  border: 2px solid #89cff0;
+  border: 2px solid var(--accent-color);
   padding: 0.5rem;
   text-align: center;
 }
@@ -277,7 +283,7 @@ main {
 }
 
 .cta-btn {
-  border: 2px solid #89cff0;
+  border: 2px solid var(--accent-color);
   display: block;
   text-align: center;
   padding: 0.5rem;
@@ -329,13 +335,13 @@ main {
 
 .design-images {
   padding: 0.25rem;
-  border: 2px solid #89cff0;
+  border: 2px solid var(--accent-color);
 }
 
 /* --- Skills --- */
 
 #skills .center-container {
-  border: 2px solid #89cff0;
+  border: 2px solid var(--accent-color);
   padding: 0.5rem;
   text-align: center;
 }
@@ -351,7 +357,7 @@ main {
 /* --- Contact --- */
 
 #contact .center-container {
-  border: 2px solid #89cff0;
+  border: 2px solid var(--accent-color);
   padding: 0.5rem;
   text-align: center;
 }
@@ -361,7 +367,7 @@ main {
 }
 
 .socials-nav > a {
-  background-color: #89cff0;
+  background-color: var(--accent-color);
   display: block;
   padding: 0.5rem 0;
   border-radius: 1rem;
@@ -414,7 +420,7 @@ main {
 @keyframes pulse {
   from {
     opacity: 0.75;
-    color: #89cff0;
+    color: var(--accent-color);
 
   }
   to {
