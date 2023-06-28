@@ -144,7 +144,8 @@ header {
 
 #current-time {
   padding: 1rem;
-  font-weight: bold;
+  font-family: 'Neue Black', "Times New Roman", sans-serif;
+  text-transform: uppercase;
 }
 
 .logo {

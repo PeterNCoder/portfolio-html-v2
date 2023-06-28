@@ -1,18 +1,7 @@
 let time = document.getElementById("current-time");
 
-// timeDisplay(() => {
-//     let date = new Date();
-//     time.textContent = date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-// })
-
-
-
-(function foo() {
+(function displayTime() {
     let date = new Date();
-    time.textContent = date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-    setTimeout(foo, 1000);
+    time.textContent = date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }).replaceAll('.', '');
+    setTimeout(displayTime, 1000);
 })();
-
-// setInterval(() => {
-//     timeDisplay();
-// }, 1000)
