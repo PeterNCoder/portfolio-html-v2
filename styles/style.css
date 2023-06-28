@@ -301,7 +301,6 @@ main {
   text-align: center;
   padding: 0.5rem;
   margin-top: 0.5rem;
-  animation: pulse 1s alternate infinite;
 }
 
 /* --- Works --- */
@@ -426,17 +425,6 @@ main {
 @keyframes appear {
   to {
     transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes pulse {
-  from {
-    opacity: 0.75;
-    color: var(--accent-color);
-
-  }
-  to {
     opacity: 1;
   }
 }
