@@ -68,19 +68,19 @@ body {
 /* ---------- Typography ---------- */
 
 @font-face {
-  font-family: 'Neue Black';
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-  src: url(../fonts/TheNeue-Black.woff2) format('woff2');
-}
-
-@font-face {
   font-family: 'Montserrat';
   font-weight: normal;
   font-style: normal;
   font-display: swap;
   src: url(../fonts/Montserrat-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url(../fonts/Roboto-Regular.ttf) format('truetype');
 }
 
 /* ---------- Elements ---------- */
@@ -91,19 +91,18 @@ body {
 
 h1, 
 a {
-  font-family: 'Neue Black', "Times New Roman", sans-serif;
-  text-transform: uppercase;
+  font-family: 'Roboto', "Times New Roman", sans-serif;
+  font-weight: bold;
+}
+
+h1 {
+  margin-top: 0.1rem;
 }
 
 h2,
 h3 {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-}
-
-h1 {
-  font-size: 1.75rem;
-  margin-top: 0.1rem;
 }
 
 h2 {
@@ -143,6 +142,7 @@ header {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  place-items: center;
 }
 
 header:not(#works header) {
@@ -150,8 +150,9 @@ header:not(#works header) {
 }
 
 #current-time {
-  padding: 1rem;
-  font-family: 'Neue Black', "Times New Roman", sans-serif;
+  padding: 0 1rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bolder;
   text-transform: uppercase;
 }
 
@@ -258,7 +259,7 @@ main {
   animation-delay: calc(var(--stagger) * 100ms);
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  font-size: 1.75rem;
+  font-size: 3rem;
 }
 
 .intro-line {
