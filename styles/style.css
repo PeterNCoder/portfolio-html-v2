@@ -75,14 +75,6 @@ body {
   src: url(../fonts/Montserrat-Regular.ttf) format('truetype');
 }
 
-@font-face {
-  font-family: 'Roboto';
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-  src: url(../fonts/Roboto-Regular.ttf) format('truetype');
-}
-
 /* ---------- Elements ---------- */
 
 body {
@@ -91,7 +83,7 @@ body {
 
 h1, 
 a {
-  font-family: 'Roboto', "Times New Roman", sans-serif;
+  font-family: 'Montserrat', "Times New Roman", sans-serif;
   font-weight: bold;
 }
 
@@ -151,7 +143,7 @@ header:not(#works header) {
 
 #current-time {
   padding: 0 1rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: bolder;
   text-transform: uppercase;
 }
