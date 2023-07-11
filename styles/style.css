@@ -287,10 +287,6 @@ main {
   margin: 0.5rem 0;
 }
 
-.school {
-  font-weight: 600;
-}
-
 .cta-btn {
   border: 2px solid var(--accent-color);
   display: block;
@@ -335,18 +331,6 @@ main {
   margin-bottom: 0.5rem;
 }
 
-.design-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.design-images {
-  padding: 0.25rem;
-  border: 2px solid var(--accent-color);
-}
-
 /* --- Skills --- */
 
 #skills .center-container {
@@ -361,6 +345,14 @@ main {
 
 #skills h2 {
   margin: 0.5rem 0;
+}
+
+.skills-box {
+  border: 2px solid #89cff0;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  display: inline-block;
+  margin: 0.1rem;
 }
 
 /* --- Contact --- */
