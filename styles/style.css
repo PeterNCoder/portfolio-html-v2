@@ -11,7 +11,6 @@
     -Home
     -About
     -Works
-    -Skills
     -Contact
 	- Footer
   - Keyframes
@@ -25,6 +24,12 @@
   --primary-color: #000;
   --secondary-color: #fff;
   --accent-color: #89cff0;
+
+  --home-color: #89cff0;
+  --about-color: #007070;
+  --about-accent-color: #15a3a3;
+  --works-color: ;
+  --contact-color: #ff8f26;
 }
 
 html {
@@ -75,29 +80,47 @@ body {
   src: url(../fonts/Montserrat-Regular.ttf) format('truetype');
 }
 
+@font-face {
+  font-family: 'Bitter';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url(../fonts/Bitter-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url(../fonts/Poppins-Regular.ttf) format('truetype');
+}
+
 /* ---------- Elements ---------- */
 
 body {
-  font-family: 'Montserrat', sans-serif;
-}
-
-h1, 
-a {
-  font-family: 'Montserrat', "Times New Roman", sans-serif;
-  font-weight: bold;
+  font-family: 'Bitter', sans-serif;
 }
 
 h1 {
-  margin-top: 0.1rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 h2,
-h3 {
-  font-family: 'Montserrat', sans-serif;
+h3,
+a {
   font-weight: bold;
 }
 
+h1{
+  margin-top: 0.1rem;
+}
+
 h2 {
+  font-size: 1.25rem;
+}
+
+h3 {
   font-size: 1rem;
 }
 
@@ -114,6 +137,14 @@ li {
   list-style: none;
 }
 
+.cta-btn {
+  border: 2px solid var(--accent-color);
+  display: block;
+  text-align: center;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  animation: pulse 1s alternate infinite;
+}
 
 /* ---------- Links ---------- */
 
@@ -158,16 +189,27 @@ header:not(#works header) {
   left: 0;
   right: 0;
   z-index: 1000;
-  background-color: var(--accent-color);
   border-radius: 2rem;
   /* width: calc(100% - 1rem); */
   text-align: center;
   margin: 0.5rem;
 }
 
+#home .header-nav {
+  background-color: var(--home-color);
+}
+
+#about .header-nav {
+  background-color: var(--about-accent-color);
+}
+
+#contact .header-nav {
+  background-color: var(--contact-color);
+}
+
 .header-nav ul {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   place-items: center;
 }
 
@@ -186,11 +228,11 @@ header:not(#works header) {
   width: 100%;
 }
 
-.current {
+.current-page {
   position: relative;
 }
 
-.current::before {
+.current-page::before {
   content: '';
   width: 50%;
   border-top: solid 3px #000;
@@ -237,6 +279,7 @@ main {
     max-width: 40rem;
 }
 
+
 /* --- Home --- */
 
 .intro-h1 {
@@ -275,26 +318,31 @@ main {
 /* --- About --- */
 
 #about .center-container {
-  border: 2px solid var(--accent-color);
+  border: 2px solid var(--about-color);
   padding: 0.5rem;
   text-align: center;
+  opacity: 0;
+  animation: appear 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 #about h1 {
   margin-bottom: 0.5rem;
+  color: var(--about-color);
 }
-#about h2 {
+#about h2,
+#about h3 {
   margin: 0.5rem 0;
+  color: var(--about-accent-color);
 }
 
-.cta-btn {
-  border: 2px solid var(--accent-color);
-  display: block;
-  text-align: center;
-  padding: 0.5rem;
-  margin-top: 0.5rem;
-  animation: pulse 1s alternate infinite;
+.tools-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
+
 
 /* --- Works --- */
 
@@ -331,36 +379,16 @@ main {
   margin-bottom: 0.5rem;
 }
 
-/* --- Skills --- */
-
-#skills .center-container {
-  border: 2px solid var(--accent-color);
-  padding: 0.5rem;
-  text-align: center;
-}
-
-#skills h1 {
-  margin-bottom: 0.5rem;
-}
-
-#skills h2 {
-  margin: 0.5rem 0;
-}
-
-.skills-box {
-  border: 2px solid #89cff0;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-  display: inline-block;
-  margin: 0.1rem;
-}
-
 /* --- Contact --- */
 
 #contact .center-container {
-  border: 2px solid var(--accent-color);
+  border: 2px solid var(--contact-color);
   padding: 0.5rem;
   text-align: center;
+  opacity: 0;
+  animation: appear 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 #contact h1 {
@@ -368,7 +396,7 @@ main {
 }
 
 .socials-nav > a {
-  background-color: var(--accent-color);
+  border: 2px solid var(--contact-color);
   display: inline-block;
   width: 30%;
   padding: 0.5rem 0;
