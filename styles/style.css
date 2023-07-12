@@ -11,7 +11,6 @@
     -Home
     -About
     -Works
-    -Contact
 	- Footer
   - Keyframes
 ---------------------------------------- */
@@ -28,8 +27,7 @@
   --home-color: #89cff0;
   --about-color: #007070;
   --about-accent-color: #15a3a3;
-  --works-color: ;
-  --contact-color: #ff8f26;
+  --works-color: #ff8f26;
 }
 
 html {
@@ -137,15 +135,6 @@ li {
   list-style: none;
 }
 
-.cta-btn {
-  border: 2px solid var(--accent-color);
-  display: block;
-  text-align: center;
-  padding: 0.5rem;
-  margin-top: 0.5rem;
-  animation: pulse 1s alternate infinite;
-}
-
 /* ---------- Links ---------- */
 
 a {
@@ -203,13 +192,13 @@ header:not(#works header) {
   background-color: var(--about-accent-color);
 }
 
-#contact .header-nav {
-  background-color: var(--contact-color);
+#works .header-nav {
+  background-color: var(--works-color);
 }
 
 .header-nav ul {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   place-items: center;
 }
 
@@ -234,33 +223,23 @@ header:not(#works header) {
 
 .current-page::before {
   content: '';
-  width: 50%;
+  width: 70%;
   border-top: solid 3px #000;
   position: absolute;
-  left: 25%;
+  left: 15%;
   top: 0;
   z-index: 1;
 }
 
-@media (max-width: 41.25rem) {
-  .nav-text {
-    display: none;
-  }
+.header-nav {
+    max-width: 30rem;
+    margin: 0.5rem auto;
+}
+.header-nav a {
+  max-height: 3.5rem;
+  padding: 0.5rem;
 }
 
-@media (min-width: 41.25rem) {
-  .nav-text {
-    display: inline-block;
-  }
-  .header-nav {
-      max-width: 40rem;
-      margin: 0.5rem auto;
-  }
-  .header-nav a {
-    max-height: 3.5rem;
-    padding: 0.5rem;
-  }
-}
 
 /* ---------- Main ---------- */
 
@@ -318,13 +297,17 @@ main {
 /* --- About --- */
 
 #about .center-container {
-  border: 2px solid var(--about-color);
-  padding: 0.5rem;
   text-align: center;
   opacity: 0;
   animation: appear 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+}
+
+.about-border {
+  border: 2px solid var(--about-color);
+  padding: 0.5rem;
+  
 }
 
 #about h1 {
@@ -346,27 +329,35 @@ main {
 
 /* --- Works --- */
 
-#works h1,
-#works h2 {
+#works h1 {
   text-align: center;
+  color: var(--works-color);
 }
 
 .main-works {
-  padding: 5rem 1.25rem 5.5rem;
+  padding: 5rem 2rem 5.5rem;
+  opacity: 0;
+  animation: appear 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .work-container {
   display: flex;
-  background-color: #89cff010;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 1.5rem;
-  border: 2px #89cff0 solid;
+  border: 2px solid var(--works-color);
   padding: 1rem;
-  max-width: fit-content;
+  max-width: 30rem;
   margin: 1rem auto;
+}
+
+@media (min-width: 68.75rem) {
+  .work-container {
+  max-width: fit-content;
+  }
 }
 
 .dev-items {
@@ -379,40 +370,13 @@ main {
   margin-bottom: 0.5rem;
 }
 
-/* --- Contact --- */
-
-#contact .center-container {
-  border: 2px solid var(--contact-color);
-  padding: 0.5rem;
+.cta-btn {
+  border: 2px solid var(--works-color);
+  display: block;
   text-align: center;
-  opacity: 0;
-  animation: appear 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-
-#contact h1 {
-  margin-bottom: 0.25rem;
-}
-
-.socials-nav > a {
-  border: 2px solid var(--contact-color);
-  display: inline-block;
-  width: 30%;
-  padding: 0.5rem 0;
-  border-radius: 1rem 0;
-}
-
-.socials-nav > a:nth-child(1) {
-  margin-right: 0.5rem;
-}
-
-.socials-nav > a:nth-child(3) {
-  margin-left: 0.5rem;
-}
-
-.socials-link > p {
-  margin: 0.25rem 0;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  animation: pulse 1s alternate infinite;
 }
 
 /* ---------- Footer ---------- */
@@ -422,6 +386,35 @@ main {
   bottom: 4.5rem;
   left: -0.95rem;
   writing-mode: vertical-rl;
+}
+
+.footer-nav {
+  display: grid;
+  grid-template-rows: repeat(3);
+  max-width: fit-content;
+  position: fixed;
+  bottom: 4.5rem;
+  right: 0.5rem;
+  grid-gap: 0.25rem;
+}
+
+.footer-email {
+  position: fixed;
+  bottom: 12.5rem;
+  right: 0.8rem;
+  writing-mode: vertical-lr;
+}
+
+@media (min-width: 37.5rem) {
+  .copyright {
+    bottom: 0.5rem;
+  }
+  .footer-nav {
+  bottom: 0.5rem;
+  }
+  .footer-email {
+    bottom: 8.5rem;
+  }
 }
 
 /* ---------- Keyframes ---------- */
@@ -450,7 +443,7 @@ main {
 @keyframes pulse {
   from {
     opacity: 0.75;
-    color: var(--accent-color);
+    color: var(--works-color);
 
   }
   to {
