@@ -25,8 +25,7 @@
   --accent-color: #89cff0;
 
   --home-color: #89cff0;
-  --about-color: #007070;
-  --about-accent-color: #15a3a3;
+  --about-color: #b700cf;
   --works-color: #ff8f26;
 }
 
@@ -157,8 +156,9 @@ header {
   place-items: center;
 }
 
-header:not(#works header) {
+header {
   position: fixed;
+  z-index: 1;
 }
 
 #current-time {
@@ -185,15 +185,15 @@ header:not(#works header) {
 }
 
 #home .header-nav {
-  background-color: var(--home-color);
+  background-image: linear-gradient(90deg, var(--home-color) 0%, var(--about-color) 100%);
 }
 
 #about .header-nav {
-  background-color: var(--about-accent-color);
+  background-image: linear-gradient(90deg, var(--home-color) 0%, var(--about-color) 50%, var(--works-color) 100%);
 }
 
 #works .header-nav {
-  background-color: var(--works-color);
+  background-image: linear-gradient(90deg, var(--about-color) 0%, var(--works-color) 100%);
 }
 
 .header-nav ul {
@@ -300,7 +300,7 @@ main {
 #about .center-container {
   text-align: center;
   opacity: 0;
-  animation: appear 2s;
+  animation: appear 2.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
@@ -310,12 +310,6 @@ main {
   z-index: 1000;
 }
 
-.about-border {
-  border: 2px solid var(--about-color);
-  padding: 0.5rem;
-  
-}
-
 #about h1 {
   margin-bottom: 0.5rem;
   color: var(--about-color);
@@ -323,13 +317,46 @@ main {
 #about h2,
 #about h3 {
   margin: 0.5rem 0;
-  color: var(--about-accent-color);
+  color: var(--about-color);
 }
 
 .tools-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+.about-border {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+.about-border::before {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: 
+  linear-gradient(#15a3a3 0%, #A100FFFF 40%, transparent 60%);
+  animation: rotate 2s linear infinite;
+}
+
+.about-border::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 6px;
+  left: 6px;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  background: white;
+  border-radius: 5px;
 }
 
 
@@ -341,7 +368,7 @@ main {
 }
 
 .main-works {
-  padding: 5rem 2rem 5.5rem;
+  padding: 5rem 2.6rem 5.5rem;
   opacity: 0;
   animation: appear 2s;
   animation-iteration-count: 1;
@@ -455,4 +482,10 @@ main {
   to {
     opacity: 1;
   }
+}
+
+@keyframes rotate {
+	100% {
+		transform: rotate(1turn);
+	}
 }
