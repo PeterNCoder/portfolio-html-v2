@@ -403,10 +403,15 @@ main {
   .work-container {
   max-width: fit-content;
   }
+
+  .work-container:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
 }
 
 .dev-items {
   max-width: 28.75rem;
+  text-align: center;
 }
 
 .dev-items a:first-child, 
