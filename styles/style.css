@@ -396,17 +396,17 @@ main {
   margin: 1rem auto;
 }
 
-.work-container:nth-of-type(even) {
+.anim-box:nth-of-type(even) {
   transform: translateX(300%);
   transition: transform 1s ease;
 }
 
-.work-container:nth-of-type(odd) {
+.anim-box:nth-of-type(odd) {
   transform: translateX(-300%);
   transition: transform 1s ease;
 }
 
-.work-container.show {
+.anim-box.show {
   transform: translateX(0);
 }
 
@@ -425,10 +425,10 @@ main {
   text-align: center;
 }
 
-.dev-items a:first-child, 
-.dev-items p {
+.dev-items a:first-child {
   display: inline-block;
   margin-bottom: 0.5rem;
+  color: var(--works-color);
 }
 
 .cta-btn {
@@ -438,6 +438,9 @@ main {
   padding: 0.5rem;
   margin-top: 0.5rem;
   animation: pulse 1s alternate infinite;
+  max-width: 43.75rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .tools-icon {
@@ -450,13 +453,13 @@ main {
 }
 
 #works h2 {
-  border-left: 4px solid var(--works-color);
-  padding: 0.25rem 0 0.25rem 0.5rem;
+  margin-top: 0;
 }
 
 .overviewteam-wrapper {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .overview-container {
@@ -464,9 +467,30 @@ main {
   margin-right: 2rem;
 }
 
+.team-container {
+  width: 15rem;
+  align-self: start
+}
+
+.challenges-container {
+  margin-bottom: 2rem;
+  display: inline-block;
+}
+
+.overview-container,
+.team-container,
+.challenges-container,
+.tools-container {
+  border-left: 4px solid var(--works-color);
+  box-shadow: #00000040 0px 14px 28px, #00000038 0px 10px 10px;
+  border-radius: .3rem;
+  padding: 0.5rem;
+  margin: 1rem 0;
+}
+
 .img-preview {
   display: block;
-  margin: 1rem auto;
+  margin: 1.25rem auto;
 }
 
 /* ---------- Footer ---------- */

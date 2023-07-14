@@ -7,7 +7,7 @@ let time = document.getElementById("current-time");
 })();
 
 const animations = {
-    boxes: document.querySelectorAll('.work-container'),
+    boxes: document.querySelectorAll('.anim-box'),
     triggerBottom: window.innerHeight / 5 * 4,
 
     checkBoxes: () => {
