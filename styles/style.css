@@ -576,30 +576,33 @@ main {
   margin: 1.25rem auto;
 }
 
-@media (max-width: 78.125rem) {
-  .arrows,
-  .arrows2 {
-    display: none;
-  }
-}
-
-
 .arrows {
 	width: 4rem;
 	height: 5rem;
 	position: absolute;
 	left: 50%;
-  margin-left: -36rem;
+  margin-left: -1.8rem;
 	bottom: 4rem;
 }
 
 .arrows2 {
-	width: 4rem;
-	height: 5rem;
-	position: absolute;
-	right: 50%;
-  margin-right: -36rem;
-	bottom: 4rem;
+  display: none;
+}
+
+@media (min-width: 78.125rem) {
+  .arrows {
+    margin-left: -36rem;
+  }
+
+  .arrows2 {
+    display: block;
+    width: 4rem;
+    height: 5rem;
+    position: absolute;
+    right: 50%;
+    margin-right: -36rem;
+    bottom: 4rem;
+  }
 }
 
 .arrows path,
