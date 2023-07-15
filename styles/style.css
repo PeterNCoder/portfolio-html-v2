@@ -275,7 +275,7 @@ main {
   animation-delay: calc(var(--stagger) * 100ms);
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 .intro-line {
@@ -294,6 +294,7 @@ main {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   margin: 0.25rem 0;
+  font-size: 1rem;
 }
 
 /* --- About --- */
@@ -308,7 +309,7 @@ main {
 #about .center-container {
   text-align: center;
   opacity: 0;
-  animation: appear 2.5s;
+  animation: appear 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
@@ -373,6 +374,11 @@ main {
 #works h1 {
   text-align: center;
   color: var(--works-color);
+  opacity: 0;
+  animation: appear 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  
 }
 
 #works main {
@@ -393,7 +399,33 @@ main {
   border: 2px solid var(--works-color);
   padding: 1rem;
   max-width: 30rem;
-  margin: 1rem auto;
+  margin: 2.5rem auto 3.5rem;
+  background-color: #fff;
+}
+
+.work-container:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(45deg, var(--works-color), var(--about-color), var(--works-color));
+  background-size: 300%;
+  width: calc(100%);
+  height: calc(100%);
+  z-index: -2;
+  animation: bgMove 10s linear infinite;
+  filter: blur(10px);
+}
+
+.work-container:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #fff;
+  width: calc(100%);
+  height: calc(100%);
+  z-index: -1;
 }
 
 .anim-box:nth-of-type(even) {
@@ -410,7 +442,7 @@ main {
   transform: translateX(0);
 }
 
-@media (min-width: 68.75rem) {
+@media (min-width: 78.125rem) {
   .work-container {
   max-width: fit-content;
   }
@@ -493,6 +525,57 @@ main {
   margin: 1.25rem auto;
 }
 
+@media (max-width: 78.125rem) {
+  .arrows,
+  .arrows2 {
+    display: none;
+  }
+}
+
+
+.arrows {
+	width: 4rem;
+	height: 5rem;
+	position: absolute;
+	left: 50%;
+  margin-left: -36rem;
+	bottom: 4rem;
+}
+
+.arrows2 {
+	width: 4rem;
+	height: 5rem;
+	position: absolute;
+	right: 50%;
+  margin-right: -36rem;
+	bottom: 4rem;
+}
+
+.arrows path,
+.arrows2 path {
+	stroke: #ff0000;
+	fill: transparent;
+	stroke-width: 1px;	
+	animation: arrow 2s infinite;
+	-webkit-animation: arrow 2s infinite; 
+}
+
+.arrows path.a1,
+.arrows2 path.a1 {
+	animation-delay:-1s;
+}
+
+.arrows path.a2,
+.arrows2 path.a2 {
+	animation-delay:-0.5s;
+}
+
+.arrows path.a3,
+.arrows2 path.a1 {	
+	animation-delay:0s;
+}
+
+
 /* ---------- Footer ---------- */
 
 .copyright {
@@ -569,4 +652,21 @@ main {
 	100% {
 		transform: rotate(1turn);
 	}
+}
+
+@keyframes arrow
+{
+  0% {opacity:0}
+  40% {opacity:1}
+  80% {opacity:0}
+  100% {opacity:0}
+}
+
+@keyframes bgMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 400% 0;
+  }
 }
