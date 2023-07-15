@@ -275,7 +275,7 @@ main {
   animation-delay: calc(var(--stagger) * 100ms);
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 
 .intro-line {
@@ -295,6 +295,57 @@ main {
   animation-fill-mode: forwards;
   margin: 0.25rem 0;
   font-size: 1rem;
+}
+
+.intro-container{
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.moving-lines span{
+  position: absolute;
+  filter: blur(1px);
+}
+
+.moving-lines span:nth-child(1){
+  height: 3px;
+  width: 300px;
+  top: 0;
+  left:-300px;
+  background: linear-gradient(to right, #ffffff00, var(--home-color));
+  animation: line1 2s linear infinite;
+  animation-delay: 1s;
+}
+
+.moving-lines span:nth-child(2){
+  height: 125px;
+  width: 4px;
+  top: -125px;
+  right: 0;
+  background: linear-gradient(to bottom, #ffffff00, var(--home-color));
+  animation: line2 2s linear infinite;
+  animation-delay: 2s;
+}
+
+.moving-lines span:nth-child(3){
+  height: 3px;
+  width: 300px;
+  right: -300px;
+  bottom: 0;
+  background: linear-gradient(to left, #ffffff00, var(--home-color));
+  animation: line3 2s linear infinite;
+  animation-delay: 3s;
+}
+
+.moving-lines span:nth-child(4){
+  height: 125px;
+  width: 4px;
+  bottom: -125px;
+  left: 0;
+  background: linear-gradient(to top, #ffffff00, var(--home-color));
+  animation: line4 2s linear infinite;
+  animation-delay: 4s;
 }
 
 /* --- About --- */
@@ -617,21 +668,21 @@ main {
 /* ---------- Keyframes ---------- */
 
 @keyframes diagonalAppear {
-  to {
+  100% {
     transform: translateX(0) translateY(0);
     opacity: 1;
   }
 }
 
 @keyframes leftrightAppear {
-  to {
+  100% {
     transform: translatex(0);
     opacity: 1;
   }
 }
 
 @keyframes appear {
-  to {
+  100% {
     transform: translateY(0);
     opacity: 1;
   }
@@ -643,7 +694,7 @@ main {
     color: var(--works-color);
 
   }
-  to {
+  100% {
     opacity: 1;
   }
 }
@@ -663,10 +714,31 @@ main {
 }
 
 @keyframes bgMove {
-  0% {
-    background-position: 0 0;
-  }
   100% {
     background-position: 400% 0;
+  }
+}
+
+@keyframes line1{
+  100% {
+    left:300px;
+  }
+}
+
+@keyframes line2{
+  100% {
+    top: 125px;
+  }
+}
+
+@keyframes line3{
+  100% {
+    right: 300px;
+  }
+}
+
+@keyframes line4{
+  100% {
+    bottom: 125px;
   }
 }
