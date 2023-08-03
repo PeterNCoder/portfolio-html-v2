@@ -374,6 +374,7 @@ main {
   margin-bottom: 0.5rem;
   color: var(--about-color);
 }
+
 #about h2,
 #about h3 {
   margin: 0.5rem 0;
@@ -477,6 +478,10 @@ main {
   width: calc(100%);
   height: calc(100%);
   z-index: -1;
+}
+
+.anim-box {
+  background-color: #fff;
 }
 
 .anim-box:nth-of-type(even) {
@@ -625,7 +630,7 @@ main {
 }
 
 .arrows path.a3,
-.arrows2 path.a1 {	
+.arrows2 path.a3 {	
 	animation-delay:0s;
 }
 
