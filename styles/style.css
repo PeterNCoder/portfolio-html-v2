@@ -35,7 +35,7 @@ html {
 
 body {
   margin: 0;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .screen-reader-text {
@@ -303,49 +303,210 @@ main {
   padding: 1rem;
 }
 
-.moving-lines span{
+.star-bg {
   position: absolute;
-  filter: blur(1px);
+  width: 100%;
+  height: 100vh;
 }
 
-.moving-lines span:nth-child(1){
-  height: 3px;
-  width: 300px;
+.star {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 2px;
+  background: linear-gradient(-45deg, var(--home-color), rgba(0, 0, 255, 0));
+  border-radius: 999px;
+  filter: drop-shadow(0 0 6px #699bff);
+  animation: tail 5s ease-in-out infinite, shooting 5s ease-in-out infinite;
+  z-index: -1;
+}
+
+.star::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 0;
+  height: 2px;
+  background: linear-gradient(-45deg, rgba(0, 0, 255, 0), var(--home-color), rgba(0, 0, 255, 0));
+  transform: translateX(50%) rotateZ(45deg);
+  border-radius: 100%;
+  animation: shining 5s ease-in-out infinite;
+  z-index: -1;
+}
+
+.star::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 0;
+  height: 2px;
+  background: linear-gradient(-45deg, rgba(0, 0, 255, 0), var(--home-color), rgba(0, 0, 255, 0));
+  transform: translateX(50%) rotateZ(45deg);
+  border-radius: 100%;
+  animation: shining 5s ease-in-out infinite;
+  transform: translateX(50%) rotateZ(-45deg);
+  z-index: -1;
+}
+
+.star:nth-child(1) {
+  top: 5vh;
+  left: 5vw;
+  animation-delay: 0.5s;
+}
+.star:nth-child(1)::before, .star:nth-child(1)::after {
+  animation-delay: 0.5s;
+}
+.star:nth-child(2) {
   top: 0;
-  left:-300px;
-  background: linear-gradient(to right, #ffffff00, var(--home-color));
-  animation: line1 2s linear infinite;
+  left: 80vw;
   animation-delay: 1s;
 }
-
-.moving-lines span:nth-child(2){
-  height: 125px;
-  width: 4px;
-  top: -125px;
-  right: 0;
-  background: linear-gradient(to bottom, #ffffff00, var(--home-color));
-  animation: line2 2s linear infinite;
+.star:nth-child(2)::before, .star:nth-child(2)::after {
+  animation-delay: 1s;
+}
+.star:nth-child(3) {
+  top: 80vh;
+  left: 0;
+  animation-delay: 1.5s;
+}
+.star:nth-child(3)::before, .star:nth-child(3)::after {
+  animation-delay: 1.5s;
+}
+.star:nth-child(4) {
+  top: 15vh;
+  left: 70vw;
   animation-delay: 2s;
 }
-
-.moving-lines span:nth-child(3){
-  height: 3px;
-  width: 300px;
-  right: -300px;
-  bottom: 0;
-  background: linear-gradient(to left, #ffffff00, var(--home-color));
-  animation: line3 2s linear infinite;
+.star:nth-child(4)::before, .star:nth-child(4)::after {
+  animation-delay: 2s;
+}
+.star:nth-child(5) {
+  top: -10vh;
+  left: 25vw;
+  animation-delay: 2.5s;
+}
+.star:nth-child(5)::before, .star:nth-child(5)::after {
+  animation-delay: 2.5s;
+}
+.star:nth-child(6) {
+  top: 0;
+  left: -10vw;
   animation-delay: 3s;
 }
-
-.moving-lines span:nth-child(4){
-  height: 125px;
-  width: 4px;
-  bottom: -125px;
-  left: 0;
-  background: linear-gradient(to top, #ffffff00, var(--home-color));
-  animation: line4 2s linear infinite;
+.star:nth-child(6)::before, .star:nth-child(6)::after {
+  animation-delay: 3s;
+}
+.star:nth-child(7) {
+  top: 25vh;
+  left: 35vw;
+  animation-delay: 3.5;
+}
+.star:nth-child(7)::before, .star:nth-child(7)::after {
+  animation-delay: 3.5s;
+}
+.star:nth-child(8) {
+  top: 45vh;
+  left: 15vw;
   animation-delay: 4s;
+}
+.star:nth-child(8)::before, .star:nth-child(8)::after {
+  animation-delay: 4s;
+}
+.star:nth-child(9) {
+  top: 45vh;
+  left: -5vw;
+  animation-delay: 4.5s;
+}
+.star:nth-child(9)::before, .star:nth-child(9)::after {
+  animation-delay: 4.5s;
+}
+.star:nth-child(10) {
+  top: 50vh;
+  left: 50vw;
+  animation-delay: 5s;
+}
+.star:nth-child(10)::before, .star:nth-child(10)::after {
+  animation-delay: 5s;
+}
+.star:nth-child(11) {
+  top: 5vh;
+  left: 25vw;
+  animation-delay: 5.5s;
+}
+.star:nth-child(11)::before, .star:nth-child(11)::after {
+  animation-delay: 5.5s;
+}
+.star:nth-child(12) {
+  top: 0;
+  left: 0;
+  animation-delay: 6s;
+}
+.star:nth-child(12)::before, .star:nth-child(12)::after {
+  animation-delay: 6s;
+}
+.star:nth-child(13) {
+  top: 40vh;
+  left: 15vw;
+  animation-delay: 6.5s;
+}
+.star:nth-child(13)::before, .star:nth-child(13)::after {
+  animation-delay: 6.5s;
+}
+.star:nth-child(14) {
+  top: 0;
+  left: 25vw;
+  animation-delay: 7s;
+}
+.star:nth-child(14)::before, .star:nth-child(14)::after {
+  animation-delay: 7s;
+}
+.star:nth-child(15) {
+  top: -5vh;
+  left: 70vw;
+  animation-delay: 7.5s;
+}
+.star:nth-child(15)::before, .star:nth-child(15)::after {
+  animation-delay: 7.5s;
+}
+.star:nth-child(16) {
+  top: 5vh;
+  left: 20vw;
+  animation-delay: 8s;
+}
+.star:nth-child(16)::before, .star:nth-child(16)::after {
+  animation-delay: 8s;
+}
+.star:nth-child(17) {
+  top: 25vh;
+  left: 70vw;
+  animation-delay: 8.5s;
+}
+.star:nth-child(17)::before, .star:nth-child(17)::after {
+  animation-delay: 8.5s;
+}
+.star:nth-child(18) {
+  top: 12vh;
+  left: 12vw;
+  animation-delay: 9s;
+}
+.star:nth-child(18)::before, .star:nth-child(18)::after {
+  animation-delay: 9s;
+}
+.star:nth-child(19) {
+  top: -10vh;
+  left: 25vw;
+  animation-delay: 9.5s;
+}
+.star:nth-child(19)::before, .star:nth-child(19)::after {
+  animation-delay: 9.5s;
+}
+.star:nth-child(20) {
+  top: 10vh;
+  left: 22vw;
+  animation-delay: 10s;
+}
+.star:nth-child(20)::before, .star:nth-child(20)::after {
+  animation-delay: 10s;
 }
 
 /* --- About --- */
@@ -724,26 +885,35 @@ main {
   }
 }
 
-@keyframes line1{
+@keyframes tail {
+  0% {
+    width: 0;
+  }
+  30% {
+    width: 100px;
+  }
   100% {
-    left:300px;
+    width: 0;
   }
 }
 
-@keyframes line2{
+@keyframes shining {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 30px;
+  }
   100% {
-    top: 125px;
+    width: 0;
   }
 }
 
-@keyframes line3{
-  100% {
-    right: 300px;
+@keyframes shooting {
+  0% {
+    transform: rotate(45deg) translateX(0);
   }
-}
-
-@keyframes line4{
   100% {
-    bottom: 125px;
+    transform: rotate(45deg) translateX(100vw);
   }
 }
