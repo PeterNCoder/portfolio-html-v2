@@ -35,7 +35,6 @@ html {
 
 body {
   margin: 0;
-  overflow-x: hidden;
 }
 
 .screen-reader-text {
@@ -587,6 +586,7 @@ main {
 
 #works main {
   padding: 5rem 2.6rem 5.5rem;
+  overflow-x: hidden;
 }
 
 .single-works-main {
