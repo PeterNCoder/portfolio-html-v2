@@ -35,7 +35,7 @@ html {
 
 body {
   margin: 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .screen-reader-text {
@@ -248,18 +248,12 @@ main {
   padding: 0 2.75rem;
 }
 
-.center-wrapper {
+.flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
-
-.center-container {
-    max-width: 40rem;
-    z-index: -1;
-}
-
 
 /* --- Home --- */
 
@@ -298,15 +292,17 @@ main {
 }
 
 .intro-container{
-  position: relative;
-  overflow: hidden;
   padding: 1rem;
 }
 
 .star-bg {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100vh;
+  z-index: -1;
+  overflow: hidden;
 }
 
 .star {
@@ -485,8 +481,8 @@ main {
   animation-delay: 8.5s;
 }
 .star:nth-child(18) {
-  top: 12vh;
-  left: 12vw;
+  top: 52vh;
+  left: 8vw;
   animation-delay: 9s;
 }
 .star:nth-child(18)::before, .star:nth-child(18)::after {
@@ -511,24 +507,16 @@ main {
 
 /* --- About --- */
 
-.about-wrapper {
-  max-width: 40rem;
-  margin: 0 auto;
-  padding-top: 5rem;
-  padding-bottom: 5.5rem;
-}
-
-#about .center-container {
+.about-container {
   text-align: center;
+  margin: 0 auto;
+  max-width: 40rem;
   opacity: 0;
   animation: appear 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-}
-
-#about .header-nav {
-  position: fixed;
-  z-index: 1000;
+  padding: 6rem 0;
+  clear: both;
 }
 
 #about h1 {
